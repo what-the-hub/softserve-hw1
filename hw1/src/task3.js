@@ -7,21 +7,14 @@ function enterData() {
 }
 
 function checkValue(value) {
-    let numberArray = [];
-    if (value.length === 6) {
-        for (let i = 0; i < 6; i++) {
-            let newElem = parseInt(value[i]);
-            if (isNaN(newElem)) {
-                alert("Something wrong. Check the values.");
-                enterData();
-            } else {
-                numberArray.push(newElem);
-            }
-        }
-    } else {
+    const numberArray = [...value].map(el => parseInt(el));
+    const isArrNaN = numberArray.some(el => isNaN(el));
+    if (numberArray.length != 6 || isArrNaN) {
         alert("Something wrong. Check the values.");
         enterData();
+        return;
     }
+
     checkNumbers(numberArray);
 }
 
