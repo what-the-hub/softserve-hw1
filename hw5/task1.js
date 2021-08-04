@@ -15,6 +15,5 @@ function calculate(quipu) {
     const r = eval(e);
     return d2q(r);
 };
-
 console.log(calculate("@~@@*@@"));
 console.log(calculate("@~@@+@@~~"));

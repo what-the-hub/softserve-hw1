@@ -21,9 +21,7 @@ function findPartMaxProdValue(n) {
         arr2 = arr1.slice(1);
         arr2.push(2, 2);
     }
-
     maxProductValue = n * res;
-
     return arr2 ? [arr1, arr2, maxProductValue] : [arr1, maxProductValue];
 }
 
